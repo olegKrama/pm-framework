@@ -1,0 +1,361 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 200px; /* Added as per your request */
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+select, button {
+  padding: 10px;
+  margin-top: 5px;
+}
+
+#styleName {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Scrollable Columns Container */
+.scrollable-columns {
+  max-height: calc(100vh - 200px); /* Adjust based on screen height minus header and panel */
+  overflow-y: auto;
+  margin-bottom: 60px; /* Space for the fixed drag-panel */
+}
+
+/* Columns Layout */
+.columns {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.column {
+  flex: 1;
+  min-width: 0;
+}
+
+.column h2 {
+  background: #f4f4f4;
+  padding: 10px;
+  margin: 0;
+}
+
+.section {
+  margin-bottom: 15px;
+}
+
+.section h3 {
+  margin: 0 0 10px 0;
+}
+
+/* Container for cards within each section */
+.cards {
+  min-height: 50px;
+  border: 2px dashed #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next line */
+  gap: 5px; /* Spacing between cards */
+}
+
+/* Basic card styling */
+.card {
+  position: relative; /* Needed for the 'used-block' overlay */
+  padding: 10px 15px;
+  background: #e0e0e0;
+  cursor: grab; /* More indicative cursor for drag */
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  /* For aligning content inside the card */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap; /* Prevents text from wrapping */
+}
+
+/* Hover effect on cards */
+.card:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for the delete button */
+.delete-card {
+  cursor: pointer; 
+  font-weight: bold;
+  color: #888;
+  font-size: 1.2em;
+  padding: 0 5px;
+  margin-left: 10px;
+  transition: color 0.2s;
+  line-height: 1; /* Ensures vertical alignment */
+}
+
+.delete-card:hover {
+  color: #dc3545;
+}
+
+/* Style for blocks that are already used */
+.card.used-block::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent overlay */
+  pointer-events: none; /* Allows clicks/drags to pass through */
+  border-radius: 5px;
+}
+
+/* Section styling (for the add button) */
+.add-section {
+  display: none; 
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Styles for the category-specific card colors */
+.card[data-category="Meetings"] {
+  background-color: #e0f2f7; 
+  border-left: 5px solid #00bfff; 
+}
+
+.card[data-category="Documents"] {
+  background-color: #e6e6fa;
+  border-left: 5px solid #6a5acd; 
+}
+
+.card[data-category="Tools"] {
+  background-color: #e8f4f8; 
+  border-left: 5px solid #4682b4; 
+}
+
+.card[data-category="Practices"] {
+  background-color: #f0f8ff; 
+  border-left: 5px solid #1e90ff; 
+}
+
+.card[data-category="Metrics"] {
+  background-color: #fff2e6; /* Світло-оранжевий */
+  border-left: 5px solid #ff9933; /* Яскравий помаранчевий */
+}
+
+.card[data-category="Duration"] {
+  background-color: #e6f9e6; /* Світло-зелений */
+  border-left: 5px solid #33cc33; /* Яскравий зелений */
+}
+
+.add-section:hover {
+  background: #45a049;
+}
+
+.add-section-panel {
+  display: none; /* Hidden as per your request */
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.add-section-panel:hover {
+  background: #45a049;
+}
+
+.sections-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.panel-section {
+  flex-basis: 250px; /* Fixed width for each section */
+  min-width: 250px; /* Ensure minimum width */
+  box-sizing: border-box;
+}
+
+.panel-section h4 {
+  margin: 0 0 10px 0;
+}
+
+.drag-panel {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #F9F9E7;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  max-width: 1200px;
+  margin: 0 auto;
+  max-height: 20vh; /* Встановлює максимальну висоту, наприклад, 40% від висоти вікна */
+  overflow-y: auto; /* Додає вертикальну прокрутку, коли вміст перевищує максимальну висоту */
+  padding-bottom: 20px;
+}
+
+.drag-panel h3 {
+  margin: 0 0 10px 0;
+}
+
+[draggable] {
+  -webkit-user-drag: element;
+}
+
+/* Popup Styles */
+.popup {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 300px;
+  height: auto;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.popup-content {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 300px;
+  position: relative;
+  color:white
+}
+
+#descriptionContent {
+  max-width: 250px;
+  padding: 10px;
+}
+
+#descriptionText {
+  margin: 0;
+  word-wrap: break-word;
+}
+
+.popup-content h3 {
+  margin: 0 0 15px 0;
+}
+
+.popup-content input {
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 200px;
+}
+
+.popup-content button {
+  padding: 8px 15px;
+  margin: 0 5px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background: #45a049;
+}
+
+/* Стилі для нового контейнера, що об'єднує всі елементи у шапці */
+.header-controls {
+  display: flex;
+  justify-content: space-between; /* Розміщує елементи по краях */
+  align-items: center; /* Вирівнює по центру по вертикалі */
+  padding: 10px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-controls h2 {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+/* Стилі для поля введення та іконок */
+.saveLoadControls {
+  /* display: flex; */
+  display: none;
+  align-items: center;
+  gap: 15px; /* Відстань між полем введення та іконками */
+}
+
+/* Стилі для поля введення */
+#saveName {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 150px;
+}
+
+/* Стилі для іконок-кнопок */
+.icon-button {
+  font-size: 1.5em; 
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Ефект при наведенні курсору */
+.icon-button:hover {
+  transform: scale(1.1); 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .columns {
+    flex-direction: column;
+  }
+  .column {
+    width: 100%;
+  }
+  .sections-row {
+    flex-direction: column;
+  }
+  .panel-section {
+    flex-basis: 100%; /* Full width on mobile */
+    min-width: 100%;
+  }
+  .scrollable-columns {
+    max-height: calc(100vh - 150px); /* Adjusted for mobile */
+  }
+  .drag-panel {
+    position: relative; /* Unfix on mobile to avoid overlap */
+    width: 100%;
+    margin-top: 20px;
+  }
+}

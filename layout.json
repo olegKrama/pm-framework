@@ -1,0 +1,57 @@
+{
+    "Structured Cycles": {
+      "start": [
+        { "category": "Meetings", "blocks": ["Kickoff"] },
+        { "category": "Documents", "blocks": ["Project Charter"] },
+        { "category": "Tools", "blocks": ["Basic Automated Tests"] },
+        { "category": "Practices", "blocks": ["Pair Programming"] }
+      ],
+      "work": [
+        { "category": "Meetings", "blocks": ["Daily"] },
+        { "category": "Documents", "blocks": ["RACI"] },
+        { "category": "Tools", "blocks": ["Full Automated Tests"] },
+        { "category": "Practices", "blocks": ["Test-Driven Development"] }
+      ],
+      "finish": [
+        { "category": "Meetings", "blocks": ["Retrospectives"] },
+        { "category": "Documents", "blocks": [] },
+        { "category": "Tools", "blocks": [] },
+        { "category": "Practices", "blocks": [] }
+      ]
+    },
+    "Fast Results": {
+      "start": [
+        { "category": "Meetings", "blocks": ["Daily"] },
+        { "category": "Practices", "blocks": ["Test-Driven Development"] }
+      ],
+      "work": [
+        { "category": "Tools", "blocks": ["Basic Automated Tests"] }
+      ],
+      "finish": [
+        { "category": "Meetings", "blocks": [] }
+      ]
+    },
+    "Continuous Delivery": {
+      "start": [
+        { "category": "Tools", "blocks": ["Full Automated Tests"] }
+      ],
+      "work": [
+        { "category": "Practices", "blocks": ["Test-Driven Development", "Pair Programming"] }
+      ],
+      "finish": [
+        { "category": "Meetings", "blocks": ["Daily"] }
+      ]
+    },
+    "Flexible Flow": {
+      "start": [
+        { "category": "Documents", "blocks": ["RACI"] }
+      ],
+      "work": [
+        { "category": "Meetings", "blocks": ["Daily"] },
+        { "category": "Practices", "blocks": ["Test-Driven Development"] }
+      ],
+      "finish": [
+        { "category": "Documents", "blocks": ["Project Charter"] }
+      ]
+    }
+  }

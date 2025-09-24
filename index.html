@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Constructor - Questions</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Create Your Project Plan</h1>
+    <form id="questionForm" action="recommendations.html" method="get">
+      <label for="teamSize">How many people are on the team?</label>
+      <select id="teamSize" name="teamSize">
+        <option value="<5">&lt;5</option>
+        <option value="5-10">5-10</option>
+        <!-- <option value=">10">&gt;10</option> --> <!-- Commented out as per your request -->
+      </select>
+
+      <label for="frequentResults">Are frequent results needed?</label>
+      <select id="frequentResults" name="frequentResults">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <label for="automation">Is there automation?</label>
+      <select id="automation" name="automation">
+        <option value="None">None</option>
+        <option value="Basic">Basic</option>
+        <option value="Full">Full</option>
+      </select>
+
+      <label for="teamExperience">Is the team new or experienced?</label>
+      <select id="teamExperience" name="teamExperience">
+        <option value="New">New</option>
+        <option value="Experienced">Experienced</option>
+      </select>
+
+      <label for="deadline">Is there a strict deadline?</label>
+      <select id="deadline" name="deadline">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <button type="submit">Recommend Style</button>
+    </form>
+  </div>
+</body>
+</html>

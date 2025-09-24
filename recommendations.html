@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Constructor - Recommendations</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header-controls">
+      <h2>Recommended Style: <span id="styleName">Structured Cycles</span></h2>
+  
+      <div class="saveLoadControls">
+          <input type="text" id="saveName" placeholder="Enter file name" />
+          <div class="icon-buttons-container">
+              <span class="icon-button" id="saveButton" title="Зберегти">💾</span>
+              <span class="icon-button" id="loadButton" title="Завантажити">📂</span>
+          </div>
+      </div>
+  </div>
+
+    <!-- Scrollable Columns Container -->
+    <div class="scrollable-columns">
+      <div class="columns">
+        <!-- Start Column -->
+        <div class="column" id="startColumn">
+          <h2>Start</h2>
+          <div class="section" id="startMeetings">
+            <h3>Meetings</h3>
+            <div class="cards" id="startMeetingsCards"></div>
+          </div>
+          <div class="section" id="startDocuments">
+            <h3>Documents</h3>
+            <div class="cards" id="startDocumentsCards"></div>
+          </div>
+          <div class="section" id="startTools">
+            <h3>Tools</h3>
+            <div class="cards" id="startToolsCards"></div>
+          </div>
+          <div class="section" id="startPractices">
+            <h3>Practices</h3>
+            <div class="cards" id="startPracticesCards"></div>
+          </div>
+          <button class="add-section" data-column="start">+</button>
+        </div>
+
+        <!-- Work Column -->
+        <div class="column" id="workColumn">
+          <h2>Work</h2>
+          <div class="section" id="workDuration">
+            <h3>Duration</h3>
+            <div class="cards" id="workDurationCards"></div>
+          </div>
+          <div class="section" id="workMeetings">
+            <h3>Meetings</h3>
+            <div class="cards" id="workMeetingsCards"></div>
+          </div>
+          <div class="section" id="workDocuments">
+            <h3>Documents</h3>
+            <div class="cards" id="workDocumentsCards"></div>
+          </div>
+          <div class="section" id="workTools">
+            <h3>Tools</h3>
+            <div class="cards" id="workToolsCards"></div>
+          </div>
+          <div class="section" id="workPractices">
+            <h3>Practices</h3>
+            <div class="cards" id="workPracticesCards"></div>
+          </div>
+          <div class="section" id="workMetrics">
+            <h3>Metrics</h3>
+            <div class="cards" id="workMetricsCards"></div>
+          </div>
+          <button class="add-section" data-column="work">+</button>
+        </div>
+
+        <!-- Finish Column -->
+        <div class="column" id="finishColumn">
+          <h2>Finish</h2>
+          <div class="section" id="finishMeetings">
+            <h3>Meetings</h3>
+            <div class="cards" id="finishMeetingsCards"></div>
+          </div>
+          <div class="section" id="finishDocuments">
+            <h3>Documents</h3>
+            <div class="cards" id="finishDocumentsCards"></div>
+          </div>
+          <div class="section" id="finishTools">
+            <h3>Tools</h3>
+            <div class="cards" id="finishToolsCards"></div>
+          </div>
+          <div class="section" id="finishPractices">
+            <h3>Practices</h3>
+            <div class="cards" id="finishPracticesCards"></div>
+          </div>
+          <button class="add-section" data-column="finish">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drag-and-Drop Panel with Sections -->
+    <div class="drag-panel">
+      <h3>Available Blocks</h3>
+      <button class="add-section-panel">+</button>
+      <div class="sections-row" id="panelSections">
+        <!-- Initial sections will be dynamically loaded -->
+      </div>
+    </div>
+
+    <!-- Popup for Adding New Section -->
+    <div class="popup" id="addSectionPopup">
+      <div class="popup-content">
+        <h3>Add New Section</h3>
+        <input type="text" id="sectionName" placeholder="Enter section name">
+        <button id="confirmAddSection">Add</button>
+        <button id="cancelAddSection">Cancel</button>
+      </div>
+    </div>
+
+    <!-- Popup for Card Description -->
+    <div class="popup" id="descriptionPopup">
+      <div class="popup-content" id="descriptionContent">
+        <p id="descriptionText"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
